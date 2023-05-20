@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler - S-Manga</title>
+    
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="/resources/img/logo.png" type="image/x-icon">
+ 
+ 	<!-- Start Include All CSS -->
+    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="/resources/css/menu-vertical.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/resources/css/datatables.css" type="text/css">
+    
+    <!-- Alert Messages CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+	<!-- End Include All CSS -->
+</head>
+
+<body>
+	<!-- Fragment Header -->
+	<div th:replace="~{/fragments/header :: myheader}"></div>
+	<br>
+	<br>
+	<br>
+	
+	<div class="container mt-2">
+		<h4><i class="bi bi-bookmark-fill"></i> Registro de Alquiler de Manga</h4>
+		<hr>
+
+		<form th:action="@{/alquiler/grabar}" method="POST">
+				<div class="row">
+					<div class="col-md-2">
+						<div class="form-group mb-2">
+							<label for=""><b>Id Admin</b></label> 
+							<input type="text" class="form-control i-disabled-bg" id="id-codigoAdmin" name="codigoAdmin" readonly>
+						</div>
+						<div class="form-group">
+							<label><b>Id Cliente</b></label>
+							<input type="text" class="form-control i-disabled-bg" id="id-codigo" name="codigoCliente" readonly>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="form-group mb-2">
+							<label><b>Nombre Administrador/a</b></label> 
+							<input type="text" class="form-control" id="id-admin" disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label><b>Nombre Cliente</b></label> 
+							<input type="text" class="form-control" id="id-cliente" disabled="disabled">
+						</div>								
+					</div>														
+					
+					<div class="col-md-3">										
+						<div class="form-group mb-2">
+							<label><b></b></label>
+							<button type="button" class="form-control btn btn-outline-dark fw-bold" data-bs-toggle="modal" data-bs-target="#buscarAdministrador">
+								<i class="bi bi-person-fill"></i> Seleccionar Administrador
+							</button>
+						</div>
+						<div class="form-group">
+							<label><b></b></label>
+							<button type="button" class="form-control btn btn-outline-dark fw-bold" data-bs-toggle="modal" data-bs-target="#buscarUsuario">
+								<i class="bi bi-person-check-fill"></i> Seleccionar Cliente
+							</button>
+						</div>
+					</div>
+					
+					<div class="mb-2 col-md-2">
+						<div class="form-group mb-2">
+							<label><b>Fecha Prestamo</b></label> 
+							<input type="date" class="form-control i-disabled-bg" name="fechaPrestamo" readonly="readonly">
+						</div>
+					
+						<label><b>Fecha Devolucion</b></label> 
+						<input type="date" class="form-control border-secondary" name="fechaDevolucion">
+					</div>
+					
+					<div class="mb-2 col-md-2">
+						<label for=""><b>Estado Alquiler</b></label>
+						<select class="form-select border-secondary mb-2" id="estado" name="estado" onchange="combo(this, demo)" required>
+						  <option value="">[Seleccione Estado]</option>
+						  <option value="Prestado">Prestado</option>									
+						  <option value="Devuelto">Devuelto</option>									
+						  <option value="Vencido">Vencido</option>									
+						</select>
+						
+						<div class="form-group">
+							<label><b>Plazo de Prestamo</b></label> 
+							<input type="text" class="form-control" name="dias" disabled="disabled">
+						</div>	
+					</div>
+				
+					<div class="col-md-6">
+						<hr>
+						<h6>Seleccione la cantidad deseada</h6>
+						<div class="input-group w-50">
+						  <button class="btn btn-dark fw-bold" type="button" id="btnMinus">-</button>
+						  <input type="text" class="form-control border-secondary" id="idCantidad" name="cantidad" placeholder="Ingresar Cantidad" value="1" min="1" readonly>
+						  <button class="btn btn-dark fw-bold" type="button" id="btnPlus">+</button>
+						</div>			   				    
+						
+						<label for="exampleInputEmail1" class="mt-3"><b><i class="bi bi-book-half"></i> Listado de Mangas</b></label>
+						<table id="datatable-spanish2" class="table table-bordered py-2 mt-2">
+							<thead class="table-primary">
+								<tr>
+									<th>Codigo</th>
+									<th>Manga</th>
+									<th>Precio</th>
+									<th>Vol.Manga</th>
+									<th class="text-center">Opcion</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="m:${listMangas}">
+									<td th:text="${m.codLib}"></td>
+				                    <td th:text="${m.titLib}"></td>
+				                    <td th:text="${m.precioAlquilerDia}"></td>
+				                    <td th:text="${m.volLib}"></td>				                    
+									<td class="text-center">
+										<a class="btn btn-sm btn-success btn-adicionar" title="Agregar al Carrito">
+											<i class="bi bi-plus-square"></i> Agregar
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-6">
+						<hr>
+						<label for="exampleInputEmail1"><b><i class="bi bi-cart-fill"></i> Carrito Alquiler</b></label>
+						<table id="tableDetalle" class="table table-bordered mt-2">
+							<thead class="table-success">
+								<tr class="text-center">
+									<th>Codigo</th>
+									<th>Manga</th>
+									<th>Cantidad</th>
+									<th>Precio xDia</th>
+									<th>SubTotal</th>
+									<th class="text-center">Opcion</th>
+								</tr>
+							</thead>
+							<tbody class="text-center">						
+							</tbody>
+						</table>
+						<div class="d-flex align-items-center justify-content-between">
+							<h6>Cantidad Productos: <span id="cantidadProducto"></span></h6>
+							<div class="col-md-4">
+								<h6 class="pb-1">Total: S/ <span id="totalAPagar"></span>.00 x (Día/s)</h6>
+								<h6>Precio a Pagar:</h6>
+								<div class="input-group">
+									<div class="input-group-text border-secondary">S/.</div>
+									<input class="form-control i-disabled-bg border-secondary" type="text" id="resultado" name="monto" readonly>
+									<div class="input-group-text border-secondary">.00</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="col-md-12 text-center mt-1">
+				<hr>
+				<button type="submit" id="Guardar" class="btn btn-primary py-2 px-5 fw-bold">
+				  <i class="bi bi-save2"></i> Registrar Alquiler
+				</button>
+			</div>
+		</form>
+	</div>
+		
+	<!-- Start Modal Cliente/Usuario-->
+	<div class="modal fade modal-lg" id="buscarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-blue-darker">
+					<h4 class="modal-title text-dark"><i class="bi bi-send-fill"></i> Seleccionar Cliente</h4>
+					<button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group has-feedback col-md-6">
+							<label for="exampleInputEmail1" class="text-center"><b>Apellidos</b></label>
+							<input type="text" class="form-control border-secondary" id="id-apellido" name="idBuscar" placeholder="Ingrese el Apellido del Cliente">
+						</div>
+						<div class="form-group has-feedback col-md-6">
+							<label for="exampleInputEmail1" class="text-center"><b></b></label>
+							<button type="button" class="form-control fw-bold btn btn-primary" id="btn-buscar">
+								<i class="bi bi-search"></i> Buscar Cliente
+							</button>
+						</div>
+						<div class="form-group has-feedback col-md-12">
+							<label for="exampleInputEmail1" class="mt-3"><b>Listado de Clientes</b></label>
+							<table id="tableClientes" class="table table-bordered mt-3">
+								<thead class="table-secondary">
+									<tr>
+										<th>Cod</th>
+										<th>Nombres</th>
+										<th>Apellidos</th>
+										<th>Dni</th>
+										<th>Telefono</th>
+										<th class="text-center">Opcion</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Modal Cliente/Usuario -->
+	
+	<!-- Start Modal Administrador -->
+	<div class="modal fade modal-lg" id="buscarAdministrador" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-blue-darker">
+					<h4 class="modal-title text-dark"><i class="bi bi-send-fill"></i> Seleccionar Administrador</h4>
+					<button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group has-feedback col-md-6">
+							<label for="exampleInputEmail1" class="text-center"><b>Apellidos</b></label>
+							<input type="text" class="form-control border-secondary" id="id-apellidoAdmin" name="idBuscar" placeholder="Ingrese el Apellido del Administrador">
+						</div>
+						<div class="form-group has-feedback col-md-6">
+							<label for="exampleInputEmail1" class="text-center"><b></b></label>
+							<button type="button" class="form-control fw-bold btn btn-primary" id="btn-buscarAdmin">
+								<i class="bi bi-search"></i> Buscar Administrador
+							</button>
+						</div>
+						<div class="form-group has-feedback col-md-12">
+							<label for="exampleInputEmail1" class="mt-3"><b>Listado de Clientes</b></label>
+							<table id="tableAdministradores" class="table table-bordered mt-3">
+								<thead class="table-secondary">
+									<tr>
+										<th>Cod</th>
+										<th>Nombres</th>
+										<th>Apellidos</th>
+										<th>Dni</th>
+										<th>Telefono</th>
+										<th class="text-center">Opcion</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Modal Administrador -->
+
+	<br>
+	<br>
+	<br>
+	
+	<!-- Fragment Footer -->
+	<div th:replace="~{/fragments/footer :: myfooter}"></div>
+	 
+	<!-- Start Include All JS -->
+	<script src="/resources/js/jquery-3.6.0.js"></script>
+    <script src="/resources/js/plugins.js"></script>
+    <script src="/resources/js/menu-vertical.js"></script>
+    <script src="/resources/js/back-top.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="/resources/js/datatables.js"></script>
+    <script src="/resources/js/datatables-language.js"></script>
+    	
+	<!-- Alert Messages JS -->
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- End Include All JS -->
+    
+    <!-- funcion mostrar mensaje flotante segun la accion 
+		 recuperando datos del controlador  -->
+	<script th:inline="javascript" th:if="${mensaje != null}">
+		let msj;
+		msj = /*[[${mensaje}]]*/
+	
+	 	toastr.success(msj, "Mensaje: ", {
+		    "timeOut": "7000",
+		    "extendedTImeout": "7000",
+		    "positionClass ": " toast-top-right ",
+		});
+	</script>
+	
+	<script>
+		// FUNCION BTN INCREMENTO Y DECREMENTO
+		$(document).ready(function() {
+		   $('#btnMinus').click(function() {
+		     var currentValue = parseInt($('#idCantidad').val());
+		     if (currentValue > 1) {
+		       $('#idCantidad').val(currentValue - 1);
+		     }
+		   });
+		    
+		   $('#btnPlus').click(function() {
+		     var currentValue = parseInt($('#idCantidad').val());
+		     $('#idCantidad').val(currentValue + 1);
+		   });
+		 });
+	</script>
+	
+	<script>
+    	// OBTENER FECHA ACTUAL
+		var fechaActual = new Date();
+		var year = fechaActual.getFullYear();
+		var month = (fechaActual.getMonth() + 1).toString().padStart(2, '0');
+		var day = fechaActual.getDate().toString().padStart(2, '0');
+		var fechaActualFormatted = year + '-' + month + '-' + day;
+		$("[name='fechaPrestamo']").val(fechaActualFormatted);
+		// var fechaActual = new Date().toISOString().slice(0, 10);
+		// $("[name='fechaPrestamo']").val(fechaActual); porque se esta adelantando un dia?
+		
+		// CALCULAR CAMPOS FECHA PRESTAMO & F.DEVOLUCION
+		var fechaPrestamoInput = document.getElementsByName("fechaPrestamo")[0];
+		var fechaDevolucionInput = document.getElementsByName("fechaDevolucion")[0];
+		var diasInput = document.getElementsByName("dias")[0];
+
+		fechaPrestamoInput.onchange = recalcularDias;
+		fechaDevolucionInput.onchange = recalcularDias;
+
+		function recalcularDias() {
+		  // Obtener las fechas
+		  var fechaPrestamo = new Date(fechaPrestamoInput.value);
+		  var fechaDevolucion = new Date(fechaDevolucionInput.value);
+
+		  // Calcular la diferencia
+		  var diff = fechaDevolucion.getTime() - fechaPrestamo.getTime();
+
+		  // Convertir la diferencia a días
+		  var dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+		  // Mostrar la cantidad
+		  diasInput.value = dias + " (Día/s)";
+		}
+	</script>
+	
+	<script>
+    	//EVENTO CLICK ADICIONAR DATOS MANGA A OTRA TABLA
+	    $(document).on("click",".btn-adicionar",function(){
+			// Read cod column que se hizo click
+			let cod, nom, can, pre;
+			
+			cod=$(this).parents("tr").find("td")[0].innerHTML;
+			nom=$(this).parents("tr").find("td")[1].innerHTML;
+			pre=$(this).parents("tr").find("td")[2].innerHTML;
+			can=$("#idCantidad").val();			
+			// Get, AlquilerController
+			$.get("adicionar?codigo="+cod+"&nombre="+nom+"&cantidad="+can+"&precio="+pre, function(response){			
+				// ver json
+				console.log(response);		
+				// Limpiar
+				$("#tableDetalle tbody").empty();		
+				// Var para el boton
+				let boton = "<button type='button' class='btn btn-sm btn-danger btn-eliminar'><i class='bi bi-trash'></i> Eliminar</button>";	
+				
+				// Almacenar la suma y cantidad
+	            var total = 0;
+	            var cantidadProducto = 0;
+
+	            $.each(response, function(index, item) {
+	            	// Calcula el subtotal para cada elemento
+	                var subtotal = item.cantidad * item.precio; 
+	             	// Calcula la cantidad
+	                cantidadProducto += item.cantidad;
+	             	// Agrega el subtotal al total
+	                total += subtotal; 
+
+	                $("#tableDetalle").append("<tr><td>" +
+	                    item.codigo + "</td><td>" + item.nombre + "</td><td>" + item.cantidad + "</td><td>" +
+	                    "S/ " + item.precio + "</td><td>" + "S/ " + subtotal + "</td><td>" + boton + "</td></tr>");
+	            });
+	         	// Asigna el valor total
+	            $("#totalAPagar").text(total);
+	            $("#cantidadProducto").text(cantidadProducto);
+	            
+	         	// =================================================
+	         	// Obtener los valores de días x total(Adicionar)
+	            var dias = parseFloat($("input[name='dias']").val());
+	            var total = parseFloat($("#totalAPagar").text());
+	            // Realizar la multiplicación
+	            var resultado = dias * total;
+	            // Mostrar el resultado
+	            $("#resultado").val(resultado);
+	         	// =================================================
+	        })
+	    });
+	    // Evento click de "ACTUALIZAR" el total, cuando se elimina una fila
+	    $(document).on("click", ".btn-eliminar", function() {
+	        // Obtener la fila del elemento a eliminar
+	        var fila = $(this).closest("tr");
+
+	        // Eliminar la fila del elemento
+	        fila.remove();
+
+	        // Recalcular la suma total después de eliminar el elemento
+	        var total = 0;
+	        var cantidadProducto = 0;
+	        $("#tableDetalle tbody tr").each(function() {
+	            var cantidad = $(this).find("td:eq(2)").text();
+	            var precio = $(this).find("td:eq(3)").text().substring(3);
+	            var subtotal = parseFloat(cantidad) * parseFloat(precio);
+	            total += subtotal;
+	            cantidadProducto -= cantidad;
+	        });
+	        // Actualizar la etiqueta <p> con la nueva suma total
+	        $("#totalAPagar").text(total);
+	        $("#cantidadProducto").text(cantidadProducto);
+	       	
+	        // =================================================
+	     	// Obtener los valores de días x total(Eliminar)
+	        var dias = parseFloat($("input[name='dias']").val());
+	        var total = parseFloat($("#totalAPagar").text());
+	        // Realizar la multiplicación
+	        var resultado = dias * total;
+	        // Mostrar el resultado
+	        $("#resultado").val(resultado);
+	        // =================================================
+	    });
+    </script>
+
+	<script>
+		// EVENTO ELIMINAR REGISTROS DEL CARRITO(DETALLE ALQUILER)
+		$(document).on("click",".btn-eliminar",function(){
+			// Read la columna cod de la fila actual segun el btn que se hizo click
+			let cod;
+			cod=$(this).parents("tr").find("td")[0].innerHTML;			
+			// Get
+			$.get("eliminar?codigo="+cod ,function(response){
+				console.log(response);
+				// Limpiar tabla
+				$("#tableDetalle tbody").empty();
+				// Variable para el btn
+				let boton = "<button type='button' class='btn btn-sm btn-danger btn-eliminar'><i class='bi bi-trash'></i> Eliminar</button>";
+				// Iterar
+				$.each(response,function(index,item){
+					$("#tableDetalle").append("<tr><td>"+
+							item.codigo+"</td><td>"+item.nombre+"</td><td>"+item.cantidad+"</td><td>"+
+							"S/ "+item.precio+"</td><td>"+"S/ "+(item.cantidad*item.precio)+"</td><td>"+boton+"</td></tr>");	
+				})		
+			})   	 
+		})
+	</script>
+	
+	<script>
+		// Evento buscar datos de cliente/usuario
+		$(document).on("click","#btn-buscar",function(){
+			let ape;
+			// 
+			ape=$("#id-apellido").val();
+			// Get
+			$.get("listarUsuarios?apellido="+ape ,function(response){
+				console.log(response);
+				$("#tableClientes tbody").empty();
+				// variable
+				let boton = "<button type='button' class='btn btn-sm btn-success btn-datos'><i class='bi bi-check-lg'></i> Obtener</button>";
+				// Iterar
+				$.each(response,function(index,item){
+					$("#tableClientes").append("<tr><td>"+
+						item.codUsu+"</td><td>"+item.nomUsu+"</td><td>"+
+						item.apeUsu+"</td><td>"+item.dniUsu+"</td><td>"+
+						item.telUsu+"</td><td class='text-center'>"+boton+"</td></tr>");	
+				})		
+			})
+		})
+		
+		// Evento enviar datos del cliente/usuario
+		$(document).on("click",".btn-datos",function(){
+			let cod, nom, ape;
+			// read columns
+			cod=$(this).parents("tr").find("td")[0].innerHTML;
+			nom=$(this).parents("tr").find("td")[1].innerHTML;
+			ape=$(this).parents("tr").find("td")[2].innerHTML;
+			
+			// Enviar datos a los campos id, y nombre
+			$("#id-codigo").val(cod);
+			$("#id-cliente").val(nom+ ' ' +ape);
+			
+			// Cerrar el modal
+		    $('#buscarUsuario').modal('hide');
+		})
+	</script>
+	
+	<script>
+		// Evento buscar datos de administrador
+		$(document).on("click","#btn-buscarAdmin",function(){
+			let ape;
+			// 
+			ape=$("#id-apellidoAdmin").val();
+			// Get
+			$.get("listarAdministradores?apellido="+ape ,function(response){
+				console.log(response);
+				$("#tableAdministradores tbody").empty();
+				// variable
+				let boton = "<button type='button' class='btn btn-sm btn-success btn-datosAdmin'><i class='bi bi-check-lg'></i> Obtener</button>";
+				// Iterar
+				$.each(response,function(index,item){
+					$("#tableAdministradores").append("<tr><td>"+
+						item.codAdm+"</td><td>"+item.nomAdm+"</td><td>"+
+						item.apeAdm+"</td><td>"+item.dniAdm+"</td><td>"+
+						item.telAdm+"</td><td class='text-center'>"+boton+"</td></tr>");	
+				})		
+			})
+		})
+		
+		// Evento enviar datos del administrador
+		$(document).on("click",".btn-datosAdmin",function(){
+			let cod, nom, ape;
+			// read columns
+			cod=$(this).parents("tr").find("td")[0].innerHTML;
+			nom=$(this).parents("tr").find("td")[1].innerHTML;
+			ape=$(this).parents("tr").find("td")[2].innerHTML;
+			
+			// Enviar datos a los campos id, y nombre
+			$("#id-codigoAdmin").val(cod);
+			$("#id-admin").val(nom+ ' ' +ape);
+			
+			// Cerrar el modal
+		    $('#buscarAdministrador').modal('hide');
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>S-Books - Inicio</title>
+	
+	<!-- Favicon Icon -->
+	<link rel="shortcut icon" href="/resources/img/logo.png" type="image/x-icon">
+	
+	<!-- Start Include All CSS -->
+	<link rel="stylesheet" href="/resources/css/index.css">
+	<link rel="stylesheet" href="/resources/css/menu-vertical.css">
+	
+	<!-- Swiper Demo Animation -->
+	<link rel="stylesheet" href="/resources/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/resources/css/animation-banner.css">
+	<link rel="stylesheet" href="/resources/css/animation-popular.css">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	
+	<!-- Icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<!-- End Include All CSS -->
+</head>
+
+<body class="my-body">
+
+	<!-- Fragment Header -->
+	<div th:replace="~{/fragments/header :: myheader}"></div>
+	
+	<!-- Banner Animation Start -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- Banner-1 -->
+            <div class="swiper-slide">
+                <!-- Image Banner -->
+                <img src="/resources/img/b-promise.jpg" alt="Promise Neverland">
+
+                <!-- Info Banner Start -->
+                <div class="info-banner col-sm-1 col-md-1 col-lg-3">
+                    <!-- Year -->
+                    <h6 class="small text-wrap">PUBLICADO | 2016 </h6>
+                    <!-- Title -->
+                    <h1 class="title-info text-warning">The Promised Neverland</h1>
+                    <!-- Genre -->
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-sm btn-danger rounded-pill px-1 py-0 me-2">Misterio</a>
+                        <a class="btn btn-sm btn-info rounded-pill btn-sm ps-1 pe-1 py-0 me-2">Suspenso</a>
+                        <a class="btn btn-sm btn-success rounded-pill ps-1 pe-1 py-0 me-2">Aventura</a>
+                        <a class="btn btn-sm btn-primary rounded-pill ps-1 pe-1 py-0 me-2">Ciencia Ficción</a>
+                    </div>
+                    <br>
+                    <!-- Sinopsis -->
+                    <div class="container-sinopsis">
+                        <p class="sinopsis-banner fw-semibold text-wrap">Después de descubrir que su hogar es en realidad una granja donde son criados como alimento para los demonios, Emma y sus amigos deciden escapar y buscar la verdad detrás de su existencia. A lo largo de su peligrosa odisea.</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <!-- Button Detail -->
+                        <a class="btn-detalle btn rounded-3 d-flex align-items-center text-decoration-none text-light px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-square me-2" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg> Detalle</a>
+                        <!-- Button Agregar -->
+                        <a class="btn-agregar btn rounded-3 d-flex align-items-center text-decoration-none text-light ms-3 px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square me-2" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg> Agregar</a>
+                    </div>
+                </div>
+                <!-- Info Banner End -->
+            </div>
+            <!-- Banner-2 -->
+            <div class="swiper-slide">
+                <!-- Image Banner -->
+                <img src="/resources/img/b-mob.jpg" alt="Mob Psycho 100">
+
+                <!-- Info Banner Start -->
+                <div class="info-banner col-sm-1 col-md-1 col-lg-3">
+                    <!-- Year -->
+                    <h6 class="small text-light">PUBLICADO | 2012</h6>
+                    <!-- Title -->
+                    <h1 class="title-info text-light">Mob Psycho 100</h1>
+                    <!-- Genre -->
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-sm btn-danger rounded-pill px-1 py-0 me-2">Acción</a>
+                        <a class="btn btn-sm btn-info rounded-pill btn-sm ps-1 pe-1 py-0 me-2">Comedia</a>
+                        <a class="btn btn-sm btn-success rounded-pill ps-1 pe-1 py-0 me-2">Aventura</a>
+                        <a class="btn btn-sm btn-primary rounded-pill ps-1 pe-1 py-0 me-2">Fantasía</a>
+                    </div>
+                    <br>
+                    <!-- Sinopsis -->
+                    <div class="container-sinopsis">
+                        <p class="sinopsis-banner fw-semibold text-wrap text-light">Mob trabaja como asistente en una tienda de exorcismos junto a su jefe, Reigen Arataka, quien se hace pasar por un exorcista poderoso pero en realidad es un fraude. Mob es reprimido y tímido, tratando de mantener sus emociones bajo control para evitar dañar a los demás.</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <!-- Button Detail -->
+                        <a class="btn-detalle btn rounded-3 d-flex align-items-center text-decoration-none text-light px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-square me-2" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg> Detalle</a>
+                        <!-- Button Agregar -->
+                        <a class="btn-agregar btn rounded-3 d-flex align-items-center text-decoration-none text-light ms-3 px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square me-2" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg> Agregar</a>
+                    </div>
+                </div>
+                <!-- Info Banner End-->
+            </div>
+            <!-- Banner-3 -->
+            <div class="swiper-slide">
+                <!-- Image Banner -->
+                <img src="/resources/img/b-hxh.jpg" alt="Hunter X Hunter">
+
+                <!-- Info Banner Start -->
+                <div class="info-banner col-sm-1 col-md-1 col-lg-3">
+                    <!-- Year -->
+                    <h6 class="small text-wrap text-light">PUBLICADO | 1998</h6>
+                    <!-- Title -->
+                    <h1 class="title-info text-light">Hunter x Hunter</h1>
+                    <!-- Genre -->
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-sm btn-danger rounded-pill px-1 py-0 me-2">Acción</a>
+                        <a class="btn btn-sm btn-info rounded-pill btn-sm ps-1 pe-1 py-0 me-2">Comedia</a>
+                        <a class="btn btn-sm btn-success rounded-pill ps-1 pe-1 py-0 me-2">Aventura</a>
+                        <a class="btn btn-sm btn-primary rounded-pill ps-1 pe-1 py-0 me-2">Fantasía</a>
+                    </div>
+                    <br>
+                    <!-- Sinopsis -->
+                    <div class="container-sinopsis">
+                        <p class="sinopsis-banner fw-semibold text-wrap text-light">Inspirado por su padre, Gon decide convertirse en cazador para encontrarlo y se une a la academia de cazadores. Allí conoce a otros tres aspirantes a cazadores, con quienes se embarca en diferentes misiones y enfrenta peligrosas pruebas para convertirse en cazadores.</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <!-- Button Detail -->
+                        <a class="btn-detalle btn rounded-3 d-flex align-items-center text-decoration-none text-light px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-square me-2" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg> Detalle</a>
+                        <!-- Button Agregar -->
+                        <a class="btn-agregar btn rounded-3 d-flex align-items-center text-decoration-none text-light ms-3 px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square me-2" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg> Agregar</a>
+                    </div>
+                </div>
+                <!-- Info Banner End -->
+            </div>
+            <!-- Banner-4 -->
+            <div class="swiper-slide">
+                <!-- Image Banner -->
+                <img src="/resources/img/b-codeg.jpg" alt="Code Geas">
+
+                <!-- Info Banner Start -->
+                <div class="info-banner col-sm-1 col-md-1 col-lg-3">
+                    <!-- Year -->
+                    <h6 class="small text-wrap text-light">PUBLICADO | 2006</h6>
+                    <!-- Title -->
+                    <h1 class="title-info text-warning">Code Geass</h1>
+                    <!-- Genre -->
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-sm btn-danger rounded-pill px-1 py-0 me-2">Acción</a>
+                        <a class="btn btn-sm btn-info rounded-pill btn-sm ps-1 pe-1 py-0 me-2">Comedia</a>
+                        <a class="btn btn-sm btn-success rounded-pill ps-1 pe-1 py-0 me-2">Aventura</a>
+                        <a class="btn btn-sm btn-primary rounded-pill ps-1 pe-1 py-0 me-2">Fantasía</a>
+                    </div>
+                    <br>
+                    <!-- sinopsis -->
+                    <div class="container-sinopsis">
+                        <p class="sinopsis-banner fw-semibold text-wrap text-light">Un joven príncipe exiliado de Britannia que adquiere el poder del "Geass", una habilidad sobrenatural que le permite controlar la mente de las personas,
+                        con su nuevo poder, Lelouch se une a un grupo de rebeldes llamado y lidera una guerra contra el Imperio de Britannia</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <!-- Button Details -->
+                        <a class="btn-detalle btn rounded-3 d-flex align-items-center text-decoration-none text-light px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-square me-2" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg> Detalle</a>
+                        <!-- Button Agregar -->
+                        <a class="btn-agregar btn rounded-3 d-flex align-items-center text-decoration-none text-light ms-3 px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square me-2" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg> Agregar</a>
+                    </div>
+                </div>
+                <!-- Info Banner End  -->
+            </div>
+            <!-- Banner-5 -->
+            <div class="swiper-slide">
+                <!-- Image Banner -->
+                <img src="/resources/img/b-titan.jpg" alt="Attack On Titan">
+
+                <!-- Info Banner Start -->
+                <div class="info-banner col-sm-1 col-md-1 col-lg-3">
+                    <!-- Year -->
+                    <h6 class="small text-wrap text-light">PUBLICADO | 2007</h6>
+                    <!-- Title -->
+                    <h1 class="title-info text-light">Attack on Titan</h1>
+                    <!-- Genre -->
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-sm btn-danger rounded-pill px-1 py-0 me-2">Acción</a>
+                        <a class="btn btn-sm btn-info rounded-pill btn-sm ps-1 pe-1 py-0 me-2">Comedia</a>
+                        <a class="btn btn-sm btn-success rounded-pill ps-1 pe-1 py-0 me-2">Aventura</a>
+                        <a class="btn btn-sm btn-primary rounded-pill ps-1 pe-1 py-0 me-2">Fantasía</a>
+                    </div>
+                    <br>
+                    <!-- Sinopsis -->
+                    <div class="container-sinopsis">
+                        <p class="sinopsis-banner fw-semibold text-wrap text-light">La trama sigue a Eren Yeager, Mikasa Ackerman y Armin Arlert, tres amigos que viven en el distrito de Shiganshina, Sin embargo, su mundo se ve sacudido cuando un titán destruye la muralla exterior, permitiendo que otros titanes entren a la ciudad y causen una masacre.</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <!-- Button Detail -->
+                        <a class="btn-detalle btn rounded-3 d-flex align-items-center text-decoration-none text-light px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-square me-2" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg> Detalle</a>
+                        <!-- Button Agregar -->
+                        <a class="btn-agregar btn rounded-3 d-flex align-items-center text-decoration-none text-light ms-3 px-4"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square me-2" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg> Agregar</a>
+                    </div>
+                </div>
+                <!-- Info Banner End -->
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- Banner Animation End -->
+    
+    <!-- SubTitle Start -->
+    <div class="container">
+		<div class="position-absolute d-flex align-items-center pt-5">
+	       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-fire text-danger" viewBox="0 0 16 16">
+	           <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z"/>
+	       </svg>
+	       <h3 class="text-light fw-bold ms-2 m-0">Más Populares</h3>
+	   	</div>
+    </div>
+    <!-- SubTitle End -->
+    
+    <!-- Slide Animation Start -->
+    <section class="trending container" id="trending">
+        <!-- Main Content -->
+        <div class="trending-content swiper">       
+            <div class="swiper-wrapper">
+                <!-- Slide-1 -->
+                <div class="swiper-slide swiper-slide-2">
+                    <div class="box">
+                        <!-- Image Book -->
+                        <img class="img-fluid" src="/resources/img/alchemist-2.jpeg" alt="">
+                        <div class="container-lost">
+                            <!-- Detail -->
+                            <a class="btn btn-sm btn-dark text-decoration-none my-2 px-3 ms-2">Ver Detalle</a>
+                            <!-- Favorite -->
+                            <a class="text-decoration-none btn btn-sm btn-dark my-2 p-1 me-2" title="Añadir a la lista de deseos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Info Manga -->                      
+                        <div class="box-text">
+                            <!-- Title -->
+                            <h2 class="manga_name">Full Metal Alchemist</h2>
+                            <!-- Autor -->
+                            <h3 title="Autor">Hiromu Arakawa</h3>
+
+                            <div class="d-flex align-items-center justify-content-around">
+                                <!-- Price -->
+                                <div class="text-light py-1 px-2 fs-6">
+                                    <span>S/</span>
+                                    <span title="Precio">1.00</span>
+                                </div>
+                                <!-- Button Agregar -->
+                                <a class="text-decoration-none d-flex align-items-center btn btn-dark py-1 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    <span class="ps-1">Añadir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                <!-- Slide-2 -->
+                <div class="swiper-slide swiper-slide-2">
+                    <div class="box">
+                        <!-- Image Book -->
+                        <img class="img-fluid" src="/resources/img/world-2.jpg" alt="cover">
+                        <div class="container-lost">
+                            <!-- Detail -->
+                            <a class="btn btn-sm btn-dark text-decoration-none my-2 px-3 ms-2">Ver Detalle</a>
+                            <!-- Favorite -->
+                            <a class="text-decoration-none btn btn-sm btn-dark my-2 p-1 me-2" title="Añadir a la lista de deseos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Info Manga -->                      
+                        <div class="box-text">
+                            <!-- Title -->
+                            <h2 class="manga_name">Hello World</h2>
+                            <!-- Autor -->
+                            <h3 title="Autor">Nakatake Shiryu</h3>
+
+                            <div class="d-flex align-items-center justify-content-around">
+                                <!-- Price -->
+                                <div class="text-light py-1 px-2 fs-6">
+                                    <span>S/</span>
+                                    <span title="Precio">1.00</span>
+                                </div>
+                                <!-- Button Agregar -->
+                                <a class="text-decoration-none d-flex align-items-center btn btn-dark py-1 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    <span class="ps-1">Añadir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                <!-- Slide-3 -->
+                <div class="swiper-slide swiper-slide-2">
+                    <div class="box">
+                        <!-- Image Book -->
+                        <img class="img-fluid" src="/resources/img/conan-14.jpg" alt="portada">
+                        <div class="container-lost">
+                            <!-- Detail -->
+                            <a class="btn btn-sm btn-dark text-decoration-none my-2 px-3 ms-2">Ver Detalle</a>
+                            <!-- Favorite -->
+                            <a class="text-decoration-none btn btn-sm btn-dark my-2 p-1 me-2" title="Añadir a la lista de deseos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Info Manga -->                      
+                        <div class="box-text">
+                            <!-- Title -->
+                            <h2 class="manga_name">Detective Conan</h2>
+                            <!-- Autor -->
+                            <h3 title="Autor">Gosho Aoyama</h3>
+
+                            <div class="d-flex align-items-center justify-content-around">
+                                <!-- Price -->
+                                <div class="text-light py-1 px-2 fs-6">
+                                    <span>S/</span>
+                                    <span title="Precio">1.00</span>
+                                </div>
+                                <!-- Button Agregar -->
+                                <a class="text-decoration-none d-flex align-items-center btn btn-dark py-1 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    <span class="ps-1">Añadir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                <!-- Slide-4 -->
+                <div class="swiper-slide swiper-slide-2">
+                    <div class="box">
+                        <!-- Image Book -->
+                        <img class="img-fluid" src="/resources/img/jujutsu-17.jpg" alt="cover">
+                        <div class="container-lost">
+                            <!-- Detail -->
+                            <a class="btn btn-sm btn-dark text-decoration-none my-2 px-3 ms-2">Ver Detalle</a>
+                            <!-- Favorite -->
+                            <a class="text-decoration-none btn btn-sm btn-dark my-2 p-1 me-2" title="Añadir a la lista de deseos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Info Manga -->                      
+                        <div class="box-text">
+                            <!-- Title -->
+                            <h2 class="manga_name">Jujutsu Kaisen</h2>
+                            <!-- Autor -->
+                            <h3 title="Autor">Gege Akutami</h3>
+
+                            <div class="d-flex align-items-center justify-content-around">
+                                <!-- Price -->
+                                <div class="text-light py-1 px-2 fs-6">
+                                    <span>S/</span>
+                                    <span title="Precio">1.00</span>
+                                </div>
+                                <!-- Button Agregar -->
+                                <a class="text-decoration-none d-flex align-items-center btn btn-dark py-1 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    <span class="ps-1">Añadir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                <!-- Slide-5 -->
+                <div class="swiper-slide swiper-slide-2">
+                    <div class="box">
+                        <!-- Image Book -->
+                        <img class="img-fluid" src="/resources/img/demon-5.jpg" alt="portada">
+                        <div class="container-lost">
+                            <!-- Detail -->
+                            <a class="btn btn-sm btn-dark text-decoration-none my-2 px-3 ms-2">Ver Detalle</a>
+                            <!-- Favorite -->
+                            <a class="text-decoration-none btn btn-sm btn-dark my-2 p-1 me-2" title="Añadir a la lista de deseos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Info Manga -->                      
+                        <div class="box-text">
+                            <!-- Title -->
+                            <h2 class="manga_name">Demon Slayer</h2>
+                            <!-- Autor -->
+                            <h3 title="Autor">Koyoharu Gotouge</h3>
+
+                            <div class="d-flex align-items-center justify-content-around">
+                                <!-- Price -->
+                                <div class="text-light py-1 px-2 fs-6">
+                                    <span>S/</span>
+                                    <span title="Precio">1.00</span>
+                                </div>
+                                <!-- Button Agregar -->
+                                <a class="text-decoration-none d-flex align-items-center btn btn-dark py-1 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    <span class="ps-1">Añadir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                <!-- Slide-6 -->
+                <div class="swiper-slide swiper-slide-2">
+                    <div class="box">
+                        <!-- Image Book -->
+                        <img class="img-fluid" src="/resources/img/promised-5.jpg" alt="portada">
+                        <div class="container-lost">
+                            <!-- Detail -->
+                            <a class="btn btn-sm btn-dark text-decoration-none my-2 px-3 ms-2">Ver Detalle</a>
+                            <!-- Favorite -->
+                            <a class="text-decoration-none btn btn-sm btn-dark my-2 p-1 me-2" title="Añadir a la lista de deseos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Info Manga -->                      
+                        <div class="box-text">
+                            <!-- Title -->
+                            <h2 class="manga_name">The Promised Neverland</h2>
+                            <!-- Autor -->
+                            <h3 title="Autor">Kaiu Shirai</h3>
+
+                            <div class="d-flex align-items-center justify-content-around">
+                                <!-- Price -->
+                                <div class="text-light py-1 px-2 fs-6">
+                                    <span>S/</span>
+                                    <span title="Precio">1.00</span>
+                                </div>
+                                <!-- Button Agregar -->
+                                <a class="text-decoration-none d-flex align-items-center btn btn-dark py-1 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    <span class="ps-1">Añadir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                <!-- Slide-7 -->
+                <div class="swiper-slide swiper-slide-2">
+                    <div class="box">
+                        <!-- Image Book -->
+                        <img class="img-fluid" src="/resources/img/sanda-5.jpg" alt="portada">
+                        <div class="container-lost">
+                            <!-- Detail -->
+                            <a class="btn btn-sm btn-dark text-decoration-none my-2 px-3 ms-2">Ver Detalle</a>
+                            <!-- Favorite -->
+                            <a class="text-decoration-none btn btn-sm btn-dark my-2 p-1 me-2" title="Añadir a la lista de deseos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Info Manga -->                      
+                        <div class="box-text">
+                            <!-- Title -->
+                            <h2 class="manga_name">Sanda</h2>
+                            <!-- Autor -->
+                            <h3 title="Autor">Paru Itagaki</h3>
+
+                            <div class="d-flex align-items-center justify-content-around">
+                                <!-- Price -->
+                                <div class="text-light py-1 px-2 fs-6">
+                                    <span>S/</span>
+                                    <span title="Precio">1.00</span>
+                                </div>
+                                <!-- Button Agregar -->
+                                <a class="text-decoration-none d-flex align-items-center btn btn-dark py-1 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    <span class="ps-1">Añadir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                <!-- Slide-8 -->
+                <div class="swiper-slide swiper-slide-2">
+                    <div class="box">
+                        <!-- Image Book -->
+                        <img class="img-fluid" src="/resources/img/holder-4.jpg" alt="portada">
+                        <div class="container-lost">
+                            <!-- Detail -->
+                            <a class="btn btn-sm btn-dark text-decoration-none my-2 px-3 ms-2">Ver Detalle</a>
+                            <!-- Favorite -->
+                            <a class="text-decoration-none btn btn-sm btn-dark my-2 p-1 me-2" title="Añadir a la lista de deseos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Info Manga -->                      
+                        <div class="box-text">
+                            <!-- Title -->
+                            <h2 class="manga_name">UQHolder</h2>
+                            <!-- Autor -->
+                            <h3 title="Autor">ken Akamatsu</h3>
+
+                            <div class="d-flex align-items-center justify-content-around">
+                                <!-- Price -->
+                                <div class="text-light py-1 px-2 fs-6">
+                                    <span>S/</span>
+                                    <span title="Precio">1.00</span>
+                                </div>
+                                <!-- Button Agregar -->
+                                <a class="text-decoration-none d-flex align-items-center btn btn-dark py-1 px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    <span class="ps-1">Añadir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- Slide Animation End  -->
+    
+    <!-- SubTitle Start -->
+    <div class="container mb-5">
+	    <div class="d-flex align-items-center">
+	        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house-check-fill text-warning" viewBox="0 0 16 16">
+	            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+	            <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+	            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.707l.547.547 1.17-1.951a.5.5 0 1 1 .858.514Z"/>
+	        </svg>
+	        <a class="text-light fs-3 fw-bold ms-2 text-decoration-none">Agregados Recientemente</a>
+	    </div>
+    </div>
+    <!-- SubTitle End -->
+    
+    <!-- Bucle Books Start -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12 col-lg-12 col-xl-12">
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-2 dataManga" th:each="m:${dataManga}">
+                    	<!-- Start Book -->
+                        <div class="contenido-libro rounded-bottom">
+                            <div class="container-oculto-libros">
+                                <!-- Favorite -->
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <a class="btn btn-sm btn-dark p-1 text-decoration-none mt-1 me-1" title="Añadir a la lista de deseos">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill btn-heart-favorite" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="mt-5">                 
+                                    <!-- Button Agregar -->
+                                    <a class="text-decoration-none btn btn-dark text-warning mt-5 col-11">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus mb-1" viewBox="0 0 16 16">
+                                            <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                        </svg>
+                                        <span>Añadir</span>
+                                    </a>
+                                    <!-- Button Detail -->
+                                    <a class="text-decoration-none btn btn-light mt-3 col-11" th:href="@{'/manga/detalle/' + ${m.codLib}}">Ver Detalle</a>
+                                </div>
+                            </div>
+                            <!-- Image Manga -->
+							<img class="img-cover-b rounded-top" th:src="@{/datosImg/{smanga}(smanga=${m.nomArchivo})}" alt="portada">                         
+                            <!-- Title -->
+                            <h2 class="manga_name p-1 m-0" th:text="${m.titLib}"></h2>
+                            <div class="d-flex align-items-center justify-content-around mt-1">
+                                <!-- Autor -->
+                                <a class="text-decoration-none text-light text_cut" th:text="${m.mangaAutor.nomAut}"></a>
+                                <!-- Precio -->
+                                <a class="text-decoration-none text-light" title="Precio">S/ <span th:text="${m.precioAlquilerDia}"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Book  -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bucle Books End  -->
+    
+    <!-- Pagination Start -->
+    <div class="pagination">
+        <ul></ul>
+    </div>
+    <!-- Pagination End -->
+    
+    <!-- SubTitle Start -->
+    <div class="container mb-5">
+	    <div class="d-flex align-items-center">
+	        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-newspaper text-info" viewBox="0 0 16 16">
+                <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+                <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+            </svg>
+	        <a class="text-light fs-3 fw-bold ms-2 text-decoration-none">Noticias</a>
+	    </div>
+    </div>
+    <!-- SubTitle End -->
+    
+    <!-- News Start -->
+    <div class="container mb-5 bg-light">
+    	<h5 class="text-center py-5">NOTICIAS</h5>
+    </div>
+    <!-- News End -->
+    <br>
+    
+	<!-- Fragment Footer -->
+	<div th:replace="~{/fragments/footer :: myfooter}"></div>
+	
+	<!-- Start Include All JS -->      
+    <script src="/resources/js/jquery-3.6.0.js"></script>
+    <script src="/resources/js/plugins.js"></script>
+    <script src="/resources/js/menu-vertical.js"></script>
+    
+    <!-- Swiper Animation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/resources/js/animation-banner.js"></script>
+    <script src="/resources/js/animation-popular.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- Back To Top JS -->
+    <script src="/resources/js/back-top.js"></script>
+    <!-- Pagination JS -->
+    <script src="/resources/js/pagination.js"></script>
+	<!-- End Include All JS -->
+</body>
+</html>

@@ -1,0 +1,300 @@
+/* ## spacing and typescale */
+:root {
+    /* spacing */
+    --base-size        : 75.5%;
+    --multiplier       : 1;
+    --base-font-size   : calc(1.8rem * var(--multiplier));
+    --space            : calc(3.2rem * var(--multiplier));
+
+    /* vertical spacing */
+    --vspace-0_125     : calc(0.125 * var(--space));
+    --vspace-0_25      : calc(0.25 * var(--space));
+    --vspace-0_375     : calc(0.375 * var(--space));
+    --vspace-0_5       : calc(0.5 * var(--space));
+    --vspace-0_625     : calc(0.625 * var(--space));
+    --vspace-0_75      : calc(0.75 * var(--space));
+    --vspace-0_875     : calc(0.875 * var(--space));
+    --vspace-1         : calc(var(--space));
+    --vspace-1_25      : calc(1.25 * var(--space));
+    --vspace-1_5       : calc(1.5 * var(--space));
+    --vspace-1_75      : calc(1.75 * var(--space));
+    --vspace-2         : calc(2 * var(--space));
+    --vspace-2_5       : calc(2.5 * var(--space));
+    --vspace-3         : calc(3 * var(--space));
+    --vspace-3_5       : calc(3.5 * var(--space));
+    --vspace-4         : calc(4 * var(--space));
+    --vspace-4_5       : calc(4.5 * var(--space));
+    --vspace-5         : calc(5 * var(--space));
+    --vspace-5_5       : calc(5.5 * var(--space));
+    --vspace-6         : calc(6 * var(--space));
+    --text-scale-ratio : 1.2;
+    --text-size        : var(--base-font-size);
+    --text-xs          : calc((var(--text-size) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+    --text-sm          : calc(var(--text-xs) * var(--text-scale-ratio));
+    --text-md          : calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-lg          : calc(var(--text-md) * var(--text-scale-ratio));
+    --text-xl          : calc(var(--text-lg) * var(--text-scale-ratio));
+    --text-xxl         : calc(var(--text-xl) * var(--text-scale-ratio));
+    --text-xxxl        : calc(var(--text-xxl) * var(--text-scale-ratio));
+    --text-display-1   : calc(var(--text-xxxl) * var(--text-scale-ratio));
+    --text-display-2   : calc(var(--text-display-1) * var(--text-scale-ratio));
+    --text-display-3   : calc(var(--text-display-2) * var(--text-scale-ratio));
+    --vspace-btn       : var(--vspace-2);
+}
+
+button,
+input {
+    overflow : visible;
+}
+
+button,
+select {
+    text-transform : none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance : button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style : none;
+    padding      : 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline : 1px dotted ButtonText;
+}
+
+fieldset {
+    padding : 0.35em 0.75em 0.625em;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing : border-box;
+    padding    : 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height : auto;
+}
+
+[type="search"] {
+    -webkit-appearance : textfield;
+    outline-offset     : -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance : none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance : button;
+    font               : inherit;
+}
+
+/* alternar menú */
+.s-header__menu-toggle {
+    --menu-toggle-height : 3.2rem;
+    padding              : 20px;
+    z-index              : 102;
+    transition           : all 0.3s ease-in-out;
+}
+
+.s-header__menu-toggle.opaque {
+    background-color : black;
+}
+
+.s-header__menu-icon {
+    display          : block;
+    height           : 2px;
+    width            : 2.2rem;
+    background-color : white;
+    position         : absolute;
+    top              : 50%;
+}
+
+.s-header__menu-icon::before,
+.s-header__menu-icon::after {
+    content          : '';
+    width            : 100%;
+    height           : 100%;
+    background-color : inherit;
+    position         : absolute;
+    left             : 0;
+}
+
+.s-header__menu-icon::before {
+    top : -0.8rem;
+}
+
+.s-header__menu-icon::after {
+    bottom : -0.8rem;
+}
+
+/* nav header- */
+.s-header__nav {
+    z-index                    : 200;
+    background                 : #0C0C0C;
+    color                      : rgba(255, 255, 255, 0.25);
+    font-family                : var(--font-2);
+    font-size                  : 1.5rem;
+    padding                    : var(--vspace-1_25) var(--vspace-1);
+    height                     : 100%;
+    width                      : 350px;
+    transform                  : translateX(100%);
+    overflow-y                 : auto;
+    transition-property        : transform;
+    transition-duration        : 0.4s;
+    transition-timing-function : cubic-bezier(0.215, 0.61, 0.355, 1);
+    position                   : fixed;
+    right                      : 0;
+    top                        : 0;
+}
+
+.s-header__nav a,
+.s-header__nav .text-highlight {
+    color : rgba(255, 255, 255, 0.5);
+}
+
+.s-header__nav a:focus,
+.s-header__nav a:hover {
+    color : white;
+}
+
+.s-header__nav h3 {
+    margin-top    : 0;
+    font-weight   : 600;
+    font-size     : var(--text-md);
+    line-height   : 2rem;
+    color         : white;
+    margin-bottom : var(--vspace-1_5);
+}
+
+.s-header__nav-list {
+    list-style    : none;
+    margin-left   : 0;
+    margin-bottom : var(--vspace-1_5);
+    font-size     : 1.5rem;
+} 
+
+.s-header__nav-list li {
+    padding-left : 0;
+    border-top   : 1px solid rgba(255, 255, 255, 0.025);
+    line-height   : 3rem;
+}
+
+.s-header__nav-list li a {
+    text-decoration: none;
+} 
+
+.s-header__nav-close-btn {
+    display          : block;
+    height           : 2rem;
+    width            : 2rem;
+    border-radius    : 2px;
+    background-color : rgba(214, 207, 207, 0.05);
+    border-radius    : 50%;
+    font             : 0/0 a;
+    text-shadow      : none;
+    color            : transparent;
+    position         : absolute;
+    top              : var(--vspace-1_25);
+    right            : var(--vspace-1);
+}
+
+.s-header__nav-close-btn span::before,
+.s-header__nav-close-btn span::after {
+    content          : "";
+    display          : block;
+    height           : 2px;
+    width            : 12px;
+    background-color : white;
+    margin-top       : -1px;
+    position         : absolute;
+    top              : 50%;
+    left             : 9px;
+}
+
+.s-header__nav-close-btn span::before {
+    transform : rotate(-45deg);
+}
+
+.s-header__nav-close-btn span::after {
+    transform : rotate(45deg);
+}
+
+/* menu is open */
+.menu-is-open .s-header__nav {
+    transform                  : translateX(0);
+    visibility                 : visible;
+    -webkit-overflow-scrolling : touch;
+}
+
+/* menu vertical social */
+.s-header__social {
+    display    : inline-block;
+    list-style: none;
+}
+
+.s-header__social li {
+    padding-left : 0;
+    margin-right : 1rem;
+    line-height  : 2;
+}
+
+.s-header__social li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.s-header__social li:last-child {
+    margin-right : 0;
+}
+
+.s-header__social svg {
+    height : 2.4rem;
+    width  : 6.4rem;
+}
+
+.s-header__social svg path {
+    fill       : rgba(255, 255, 255, 0.15);
+    transition : all 0.3s ease-in-out;
+}
+
+.s-header__social a:focus svg path,
+.s-header__social a:hover svg path {
+    fill : white;
+}
+
+#drop-down-box{
+    font-size: 18px;
+}
+
+/* responsive header */
+@media screen and (max-width: 600px) {
+    .s-header__menu-toggle {
+        right : 2.4rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .s-header__logo {
+        left : 2.4rem;
+    }
+
+    .s-header__nav {
+        width : 90vw;
+    }
+}

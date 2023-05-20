@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+<!-- Capturar Fragment Header Start -->
+<div th:fragment="myheader">
+
+    <!-- Icon Menu Vertical -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+    <!-- Menu Horizontal Start -->
+    <navbar id="Navbar">    
+		<!-- Brand -->
+        <div class="img-title">           
+            <img src="/resources/img/logo.png" id="img-logo" title="Página de inicio de S-Manga" alt="smanga">         
+            <a th:href="@{/index}">S-Manga</a>
+        </div>
+        
+	    <!-- Links -->
+		<ul>
+			<li><a th:href="@{/index}">Inicio</a></li>
+			<div id="categories">
+				<li><a class="smoothscroll dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> 
+					Genero</a></li>
+				<div id="drop-down-box" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<a class="dropdown-item" href="#_">Shonen</a> 
+					<a class="dropdown-item" href="#_">Shojo</a> 
+					<a class="dropdown-item" href="#_">Seinen</a> 
+					<a class="dropdown-item" href="#_">Josei</a> 
+				</div>
+			</div>
+			<li><a th:href="@{/nosotros}">Nosotros</a></li>
+			<li><a th:href="@{/contacto}">Contáctanos</a></li>
+		</ul>
+
+		<div id="other-opt">
+            <div class="ctn-btn-ipt d-flex align-items-center">
+	            <!-- Button Busqueda -->
+                <button class="rounded-start-pill py-1 px-3 border border-0" title="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </button>
+                <input class="buscar form-control text rounded-end-pill py-1 px-1" type="search" name="buscar" id="buscar" placeholder="Buscar..." aria-label="Search">
+            </div>
+
+            <div class="dropdown">
+                <!-- Button Perfil -->
+                <a class="perfil-login" data-bs-toggle="dropdown" aria-expanded="false" title="Perfil">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
+                </a>          
+                <div id="drop-down-box" class="dropdown-menu">
+                    <!-- Button Modal Perfil -->
+                    <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModalPerfil">Ver Perfil</a>
+                </div> 
+            </div>  
+            <!-- Profile Name -->
+            <a class="text-decoration-none text-light name-admin">Bienvenido: Willian Rosales</a>
+
+            <div class="ms-4">
+                <!-- Button OffCanvas Car -->
+                <a type="button" class="position-relative text-decoration-none text-light pe-1 pb-1" title="Tu carrito" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <!-- Count Products -->
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                </a>
+            </div>
+
+            <!-- OffCanvas Car Start -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+	            <!-- OffCanvas Header-->            
+                <div class="offcanvas-header border-bottom">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                        <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg>
+                        <h5 class="offcanvas-title ms-2" id="offcanvasNavbarLabel">Tu Carrito</h5>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+            
+                <!-- OffCanvas Body -->
+                <div class="offcanvas-body">
+
+                    <!-- Product-1 -->
+                    <div class="d-flex align-items-center justify-content-between mb-2">                    
+                       <!-- Image Book -->                
+                       <img class="img-fluid" src="/resources/img/blue-5.jpg" style="height: 100px;">
+                         
+                        <!-- Info Book -->
+                        <div class="container">
+                            <!-- Title -->
+                            <a href="#_" class="fw-bold text-decoration-none text-dark">Blue Lock</a>
+                            <!-- Author -->
+                            <p>Muneyuki Kaneshiro</p>
+                            <!-- Count -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-sm btn-light text-success border"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                            class="bi bi-dash" viewBox="0 0 16 16">
+                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-sm btn-light border">1</button>
+                                    <button type="button" class="btn btn-sm btn-light text-success border"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                            class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                        </svg></button>
+                                </div>                        
+		                        <!-- Price -->
+                                <a class="text-decoration-none text-dark fs-5"><span>S/</span> 1.00</a>
+                            </div>
+                        </div>
+            
+                        <!-- Delete Book -->
+                        <a href="#_" class="btn btn-sm btn-outline-danger text-decoration-none py-1 px-1">
+                        	<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-trash2"
+                             viewBox="0 0 16 16"> <path d="M14 3a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2zM3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5c-1.954 0-3.69-.311-4.785-.793z" />
+                            </svg>
+                       	</a>
+                    </div>
+                    
+                    <!-- Product-2 -->
+                    <div class="d-flex align-items-center justify-content-between mb-2">                    
+                       <!-- Image Book -->                
+                       <img class="img-fluid" src="/resources/img/magic-1.jpg" alt="cover" style="height: 100px;">
+                         
+                        <!-- Info Book -->
+                        <div class="container">
+                            <!-- Title -->
+                            <a href="#_" class="fw-bold text-decoration-none text-dark">The Labyrinth of Magic</a>
+                            <!-- Author -->
+                            <p>Shinobu Ohtaka</p>
+                            <!-- Count -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-sm btn-light text-success border"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                            class="bi bi-dash" viewBox="0 0 16 16">
+                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-sm btn-light border">1</button>
+                                    <button type="button" class="btn btn-sm btn-light text-success border"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                            class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                        </svg></button>
+                                </div>                        
+		                        <!-- Price -->
+                                <a class="text-decoration-none text-dark fs-5"><span>S/</span> 1.00</a>
+                            </div>
+                        </div>
+            
+                        <!-- Delete Book -->
+                        <a href="#_" class="btn btn-sm btn-outline-danger text-decoration-none py-1 px-1">
+                        	<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-trash2"
+                             viewBox="0 0 16 16"> <path d="M14 3a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2zM3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5c-1.954 0-3.69-.311-4.785-.793z" />
+                            </svg>
+                       	</a>
+                    </div>
+                    <!-- Product-3 -->
+                    <div class="d-flex align-items-center justify-content-between mb-2">                    
+                       <!-- Image Book -->                
+                       <img class="img-fluid" src="/resources/img/chainsaw-12.jpg" alt="cover" style="height: 100px;">
+                         
+                        <!-- Info Book -->
+                        <div class="container">
+                            <!-- Title -->
+                            <a href="#_" class="fw-bold text-decoration-none text-dark">Chainsaw Man</a>
+                            <!-- Author -->
+                            <p>Tatsumi Fujimoto</p>
+                            <!-- Count -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-sm btn-light text-success border"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                            class="bi bi-dash" viewBox="0 0 16 16">
+                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-sm btn-light border">1</button>
+                                    <button type="button" class="btn btn-sm btn-light text-success border"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                            class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                        </svg></button>
+                                </div>                        
+		                        <!-- Price -->
+                                <a class="text-decoration-none text-dark fs-5"><span>S/</span> 1.00</a>
+                            </div>
+                        </div>
+            
+                        <!-- Delete Book -->
+                        <a href="#_" class="btn btn-sm btn-outline-danger text-decoration-none py-1 px-1">
+                        	<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-trash2"
+                             viewBox="0 0 16 16"> <path d="M14 3a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2zM3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5c-1.954 0-3.69-.311-4.785-.793z" />
+                            </svg>
+                       	</a>
+                    </div>
+                   
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <!-- OffCanvas Body End -->
+            
+                <!-- OffCanvas Footer Start -->
+                <div class="position-absolute bottom-0 end-0 bg-dark col-sm-12">
+                    <div class="container d-flex align-items-center justify-content-between my-3">
+                        <!-- Count Products -->
+                        <a class="text-decoration-none text-light fs-5"><span>3</span> Productos</a>
+                        <!-- Total -->       
+                      	<a class="text-decoration-none text-light fs-5">Total a pagar S/ <span>10.00</span></a>  
+                    </div>
+                    <!-- Button Alquiler -->
+                    <div class="container mb-2">
+                        <a class="text-decoration-none btn btn-outline-warning col-sm-12 text-center fs-5" href="#_">Proceder Con La Reserva</a>
+                    </div>
+                </div>            
+	            <!-- OffCanvas Footer End -->
+            </div>
+            <!-- OffCanvas Car End -->
+        </div>
+
+
+        <!-- Menu Vertical Start -->
+        <div>
+            <!-- Icon -->
+            <a class="s-header__menu-toggle" href="#0">
+                <span class="s-header__menu-icon"></span>
+            </a>
+
+			<!-- Menu Admin -->
+            <nav class="s-header__nav">
+				<h3>S-Manga Admin.</h3>
+				<a href="#0" class="s-header__nav-close-btn"><span>X</span></a>
+
+				<!-- Links -->
+                <div class="s-header__nav-list dropdown">
+                    <li><a th:href="@{/menu}" class="smoothscroll fw-bold">Menu</a></li>
+                    <hr>          
+                    <div id="categories">  
+                        <li><a href="#" class="smoothscroll dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Mantenimiento</a>
+                        </li>
+                        <div id="drop-down-box" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a th:href="@{/administrador/lista}" class="dropdown-item">Administrador</a>
+                            <a th:href="@{/usuario/lista}" class="dropdown-item">Usuario</a>
+                            <a th:href="@{/manga/lista}" class="dropdown-item">Manga</a>
+                            <a th:href="@{/editorial/lista}" class="dropdown-item">Editorial</a>
+                            <a th:href="@{/autor/lista}" class="dropdown-item">Autor</a>
+                            <a th:href="@{/alquiler/lista}" class="dropdown-item">Alquiler</a>
+                            <a th:href="@{/detalles/lista}" class="dropdown-item">Alquiler Detalle</a>
+                        </div>
+                    </div>
+                    <br>
+              
+                    <div id="categories">    
+                        <li><a href="#" class="smoothscroll dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Reportes</a>
+                        </li>
+                        <div id="drop-down-box" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item">Administrador</a>
+                            <a class="dropdown-item">Usuario</a>
+                            <a class="dropdown-item">Manga</a>
+                            <a class="dropdown-item">Editorial</a>
+                            <a class="dropdown-item">Autor</a>
+                        </div>
+                    </div>
+                    <br>
+                  
+                    <div id="categories"> 
+                        <li><a href="#" class="smoothscroll dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Transaccion</a>
+                        </li>
+                        <div id="drop-down-box" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a th:href="@{/alquiler/boleta}" class="dropdown-item" href="#">Registrar Alquiler</a>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    
+                    <li><a href="#_">Inicio De Sesion</a></li>
+                    <li><a th:href="@{/registro}">Registro</a></li>
+                    <li><a href="#_" class="smoothscroll" data-bs-toggle="modal" data-bs-target="#exampleModalLogout">Cerrar Sesión</a></li>
+                </div>
+            </nav>
+        </div>
+        <!-- Menu Vertical End -->
+    </navbar>
+    <!-- Menu Horizontal End -->
+
+    <!-- Start Cerrar Sesion Modal -->
+    <div class="modal fade" id="exampleModalLogout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="exampleModalLabel">Esta seguro que desea cerrar la sesion?</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Seleccione "Sí, Cerrar Sesion" a continuación si está listo para finalizar su sesión actual.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href="#_" class="btn btn-outline-danger">Sí, Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Cerrar Sesion Modal -->
+
+    <!-- start-modal-profile -->
+    <div class="modal fade" id="exampleModalPerfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content overflow-hidden">
+        
+			<!-- header-profile -->
+            <div class="modal-header">
+                <div class="d-flex align-items-center">
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
+                        <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
+                        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
+                        </svg>
+                    </a>
+                    <h1 class="modal-title fs-5 text-dark ms-2" id="exampleModalLabel">Detalle Perfil</h1>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+			<!-- bg-image-profile -->
+            <div class="col-sm-6 d-none d-lg-block">
+                <img class="img-fluid position-absolute z-0" src="/resources/img/b-perfil.jpg" alt="bg-perfil" style="height: 470px;">
+            </div>
+
+            <!-- body-profile -->
+            <div class="modal-body">
+                <div class="container py-2">
+                    <div class="row">
+                        <!-- box-1 -->
+                        <div class="col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <img src="/resources/img/avatar.jpg" alt="avatar" class="img-fluid rounded-circle border border-dark" style="width: 150px;">
+                                    <h5 class="my-3 text-dark fw-bold">John Smith</h5>
+                                    <p class="text-muted mb-1">Administrador</p>
+                                    <p class="text-muted mb-4">05-14-2000</p>
+                                    
+                                    <div class="d-flex justify-content-center mb-2">
+                                        <a href="#_" class="btn btn-sm btn-dark col-sm-10">Editar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- box-2 -->
+                        <div class="col-lg-8">
+                            <div class="card mb-4">
+		                        <!-- details -->
+                                <div class="card-body">                	
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p class="mb-0 text-dark font-monospace">Nombre:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p class="text-muted mb-0">Rodrigo Willian</p>
+                                        </div>
+                                    </div>
+                                    <br>
+            
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p class="mb-0 text-dark font-monospace">Apellido:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p class="text-muted mb-0">Solar Torres</p>
+                                        </div>
+                                    </div>
+                                    <br>
+            
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p class="mb-0 text-dark font-monospace">Email:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p class="text-muted mb-0">cr7@example.com</p>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p class="mb-0 text-dark font-monospace">Celular:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p class="text-muted mb-0">923943999</p>
+                                        </div>
+                                    </div>
+                                    <br>
+            
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p class="mb-0 text-dark font-monospace">Usuario:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p class="text-muted mb-0">I2023023</p>
+                                        </div>
+                                    </div>
+                                    <br>
+            
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p class="mb-0 text-dark font-monospace">Clave:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p class="text-muted mb-0">Querty</p>
+                                        </div>
+                                    </div>
+                                    <br>
+            
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p class="mb-0 text-dark font-monospace">Dirección:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                                        </div>
+                                    </div>
+                                    <br>
+            
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p class="mb-0 text-dark font-monospace">Fec. Nac:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p class="text-muted mb-0">06-23-2000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- end-modal-profile -->
+    
+ </div>
+<!-- Capturar Fragment Header End -->
+
+</body>
+</html>

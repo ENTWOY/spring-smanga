@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle - S-Manga</title>
+
+	<!-- Favicon Icon -->
+    <link rel="shortcut icon" href="/resources/img/logo.png" type="image/x-icon">
+    
+    <!-- Start Include All CSS -->
+    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="/resources/css/menu-vertical.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<!-- End Include All CSS -->
+</head>
+<body>
+	<!-- Fragment Header -->
+	<div th:replace="~{/fragments/header :: myheader}"></div>
+
+	 <!-- Start Detalle Manga -->
+	 <div class="py-5">
+	     <div class="container px-4 px-lg-5 my-5">
+     		<h3><i class="bi bi-bookmark-star-fill"></i> Detalle Manga</h3>
+			<hr>
+			<!-- Details Manga Bucle -->
+	         <div class="row gx-4 gx-lg-5 align-items-center" th:each="md:${mangaDetalle}">
+				<!-- Column-1 -->
+	             <div class="col-md-3">
+	                 <!-- Image Manga -->
+	                 <img class="card-img-top mb-5 mb-md-0" th:src="@{/datosImg/{smanga}(smanga=${md.nomArchivo})}" alt="portada" />        
+	             </div>
+	             <!-- Column-2 -->
+	             <div class="col-md-9">
+	                 <div class="d-flex align-items-center justify-content-between">    
+	                     <span class="fw-bold bg-success small rounded-pill py-0 px-1 text-light" title="Temática">Manga</span>
+	                       <a class="btn btn-danger btn-sm"><i class="bi bi-box2-heart-fill"></i> Añadir a la Lista de Deseos</a>
+	                 </div>
+	                 <!-- Name -->
+	                 <h1 class="display-5 fw-bolder text-dark pb-2" th:text="${md.titLib}"></h1>
+	                 <div class="row d-flex">
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Autor(s)</span>
+	                         <p th:text="${md.mangaAutor.nomAut}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Pais</span>
+	                         <p th:text="${md.mangaAutor.paiAut}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Editorial</span>
+	                         <p th:text="${md.mangaEditorial.nomEdi}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Año</span>
+	                         <p th:text="${md.anioLib}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Género</span>
+	                         <p th:text="${md.genLib}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Volumen</span>
+	                         <p th:text="${md.volLib}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Stock</span>
+	                         <p th:text="${md.stockLib}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Precio</span>
+	                         <p>S/ <span th:text="${md.precioAlquilerDia}"></span> (X Dia/s)</p>
+	                     </div>
+	                 </div>
+	                 <div>
+	                     <span class="fw-bold small">Sinopsis</span>
+	                     <p class="" style="text-align: justify;" th:text="${md.desLib}"></p>
+	                 </div>
+	                 <!-- Options -->
+	                 <div class="d-flex">
+	                     <!-- Count -->
+	                     <div class="btn-group me-4" role="group" aria-label="Basic example">
+						    <button type="button" class="btn btn-sm btn-success border-secondary px-2" onclick="decreaseCount()">
+						        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+						            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+						        </svg>
+						    </button>
+						    <button type="button" class="btn btn-sm btn-light border-secondary px-3" id="contador">1</button>
+						    <button type="button" class="btn btn-sm btn-success text-light border-secondary px-2" onclick="increaseCount()">
+						        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+						            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+						        </svg>
+						    </button>
+						</div>
+	                     <!-- Button Car -->
+	                     <button class="btn btn-warning px-3" type="button"> <i class="bi bi-cart-plus-fill"></i> Agregar al carrito</button>
+	                     <a class="btn btn-primary px-3 ms-3" type="button" th:href="@{/index}"><i class="bi bi-box-arrow-in-right"></i> Regresar a la Tienda</a>
+	                 </div>
+	             </div>
+	         </div>
+	     </div>
+	 </div>
+	 <!-- End Detalle Manga -->
+   
+	<br>
+	<br>
+	<!-- fragment-footer -->
+	<div th:replace="~{/fragments/footer :: myfooter}"></div>
+	
+	<!-- Start Include All JS -->
+	<script src="/resources/js/jquery-3.6.0.js"></script>
+    <script src="/resources/js/plugins.js"></script>
+    <script src="/resources/js/menu-vertical.js"></script>
+    <script src="/resources/js/back-top.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- End Include All JS -->
+    
+    <!-- Funcionalidad de conteo a los btns -->
+    <script>
+    	// Inicializar
+	    var count = 1;
+    	// Incrementar el contador
+	    function increaseCount() { count++; updateCount(); }
+	 	// Decrementar el contador
+	    function decreaseCount() { if (count > 1) { count--; updateCount(); }}
+	 	// Actualizar el texto
+	    function updateCount() { var countButton = document.getElementById('contador'); countButton.innerHTML = count; }
+	</script>
+</body>
+</html>

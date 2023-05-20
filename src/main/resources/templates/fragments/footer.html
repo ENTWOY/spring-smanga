@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>    
+</head>
+
+<body>
+
+<!-- Capturar Fragment Footer Start -->
+<div th:fragment="myfooter">
+
+	<!-- Footer Start -->
+    <footer class="footer">
+		<!-- Back To Top -->
+        <div class="page-up" id="volver-arriba">
+            <a title="Subir"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+	            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+	            </svg>
+            </a>
+        </div>
+    
+    	 <!-- Info Container Start -->
+        <div class="container">
+            <div class="row">
+                <!-- Row One -->
+                <div class="col-lg-3 container-footer-color mb-3">
+                    <div class="mb-3 footer__logo d-flex align-items-center justify-content-center">
+                   		 <!-- Brand -->
+                        <a><img class="img-fluid" src="/resources/img/logo.png" alt="smanga"/></a>
+                        <h4 class="fw-bold" title="Sword Manga">S-Manga</h4>
+                    </div>
+                    <hr>
+                    <!-- Social -->
+                    <div class="mt-3">
+                        <p class="text-center fw-bold">Síguenos en redes sociales</p>
+                        <div class="d-flex align-items-center justify-content-around">
+                            <a href="#_" class="text-decoration-none text-light">Facebook</a>         
+                            <a href="#_" class="text-decoration-none text-light">Twitter</a>                
+                            <a href="#_" class="text-decoration-none text-light">Instagram</a>  
+                            <a href="#_" class="text-decoration-none text-light">Youtube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row Two -->
+                <div class="col-lg-6 container-footer-color d-flex align-self-start justify-content-evenly mb-3">
+                    <!-- Category -->
+                    <div>
+                        <h6 class="fw-bold">Categorías</h6>
+                        <hr>
+                        <div class="footer__nav">
+                            <div class="d-flex align-items-start flex-column">
+                                <a href="#_" class="text-decoration-none text-light mb-2">Los más vendidos</a>
+                                <a href="#_" class="text-decoration-none text-light mb-2">Novedades</a>
+                                <a href="#_" class="text-decoration-none text-light mb-2">Ficción</a>
+                                <a href="#_" class="text-decoration-none text-light mb-2">Infantil</a>
+                                <a href="#_" class="text-decoration-none text-light">Juvenil</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- About us -->
+                    <div>
+                        <h6 class="fw-bold">Sobre Nosotros</h6>
+                        <hr>
+                        <div class="footer__nav">
+                            <div class="d-flex align-items-start flex-column">
+                                <a href="#_" class="text-decoration-none text-light mb-2">Quienes somos</a>
+                                <a href="#_" class="text-decoration-none text-light mb-2">Políticas de privacidad</a>
+                                <a href="#_" class="text-decoration-none text-light mb-2">Preguntas frecuentes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row Three -->
+                <div class="col-lg-3 container-footer-color mb-3 d-flex align-self-start justify-content-center">
+                    <div>
+                        <!-- Contact -->
+                        <h6 class="fw-bold">Contáctanos</h6>
+                        <hr>
+                        <div class="d-flex align-items-start flex-column">
+                            <a href="#_" class="text-decoration-none text-light mb-2">Atención al cliente: (01) 644-9191</a>
+                            <a href="#_" class="text-decoration-none text-light mb-2">(Lun-Sab 8 a.m. a 8 p.m.)</a>
+                            <a href="#_" class="text-decoration-none text-light mb-2">atencion@smanga.com.pe</a>
+                            <a href="#_" class="text-decoration-none text-light">Comprobante electrónico</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Info Container End -->
+
+        <!-- Copyright -->
+        <div class="container">
+            <hr>
+            <div class="d-flex align-items-center justify-content-center container-footer-color">
+                <a class="text-center text-decoration-none text-light"><span>©</span> Todos los derechos reservados - S-Manga 2023</a>
+            </div>
+        </div>
+
+    </footer>
+    <!-- Footer End -->
+
+</div>
+<!-- Capturar Fragment Footer End -->
+
+</body>
+</html>
