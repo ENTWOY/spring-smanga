@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./icon.png" align="center" width="150">
+  <img src="./icon.png" align="center" width="125">
 </p>
 <div align="center">
   <h2>S-Manga</h2>
