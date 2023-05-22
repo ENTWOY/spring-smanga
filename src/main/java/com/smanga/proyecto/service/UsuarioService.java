@@ -3,8 +3,6 @@ package com.smanga.proyecto.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.smanga.proyecto.entity.Usuario;
@@ -12,36 +10,29 @@ import com.smanga.proyecto.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService{
-	
-	// injection
+	// INJECTION
 	@Autowired
 	private UsuarioRepository usuarioRepo;
-	
-	// listado
+	// lIST
 	public List<Usuario> listarUsuarios() {
 		return usuarioRepo.findAll();
 	}
-	
-	// save and update
+	// SAVE AND UPDATE
 	public void grabar(Usuario bean) {
 		usuarioRepo.save(bean);
 	}
-	
-	// buscar (si existe devuelve un autor con valor, si no devuelve nulo)
+	// BUSCAR POR ID O DEVOLVER NULL
 	public Usuario buscar(Integer cod) {
 		return usuarioRepo.findById(cod).orElse(null);
 	}
-
-	// eliminar
+	// DELETE
 	public void eliminar(Integer cod) {
 		usuarioRepo.deleteById(cod);
 	}
-	
-	// buscar usuario en alquiler boleta
+	// FIND IN TABLE ALQUILER FOR APELLIDO DE USUARIO
 	public List<Usuario> listarUsuarioXApellido(String ape){
 		return usuarioRepo.listApellidoUsuario(ape);
 	}
-	
 	/*
 	 * SPRING SECURITY
 	 * */
