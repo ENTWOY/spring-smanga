@@ -58,9 +58,8 @@
                     </svg>Generar Reporte
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">PDF</a></li>
-                    <li><a class="dropdown-item" href="#">XML</a></li>
-                    <li><a class="dropdown-item" href="#">JSON</a></li>
+                    <li><a th:href="@{/autor/reporte/pdf}" class="dropdown-item" href="#">PDF</a></li>
+                    <li><a th:href="@{/autor/reporte/html}" class="dropdown-item" href="#">HTML</a></li>
                 </ul>
             </div>
         </div>
