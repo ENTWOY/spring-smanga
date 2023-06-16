@@ -64,6 +64,8 @@ public class AutorService {
 		Map<String, Object> parameters = new HashMap<>();
 	    parameters.put("createdBy", "Team S-Manga");
 	    parameters.put("logo", directoryName+"\\src\\main\\resources\\static\\resources\\img\\logo.png");
+	    parameters.put("github", directoryName+"\\src\\main\\resources\\static\\resources\\img\\github.jpg");
+		parameters.put("support", directoryName+"\\src\\main\\resources\\static\\resources\\img\\support.jpg");
 	    // VISUALIZANDO LA TABLA DE JASPER
 		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, datasource);
 		if(format.equalsIgnoreCase("pdf")) {
