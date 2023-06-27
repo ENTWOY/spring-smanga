@@ -9,7 +9,7 @@ public class ConfigureImage implements WebMvcConfigurer{
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		WebMvcConfigurer.super.addResourceHandlers(registry);
+		/*WebMvcConfigurer.super.addResourceHandlers(registry);*/
 		
 		// llamar al objecto ResourceHandlerRegistry
 		// con el 1.alias ingresamos a la 2.ruta fisica

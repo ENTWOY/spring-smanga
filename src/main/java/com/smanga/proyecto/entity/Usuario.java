@@ -58,14 +58,6 @@ public class Usuario {
 	@OneToMany(mappedBy = "alquilerUsuario")
 	private List<Alquiler> listaAlquiler;
 
-	public List<Alquiler> getListaAlquiler() {
-		return listaAlquiler;
-	}
-
-	public void setListaAlquiler(List<Alquiler> listaAlquiler) {
-		this.listaAlquiler = listaAlquiler;
-	}
-
 	// getters and setters
 	public Integer getCodUsu() {
 		return codUsu;
@@ -145,6 +137,14 @@ public class Usuario {
 
 	public void setUsuarioRol(Rol usuarioRol) {
 		this.usuarioRol = usuarioRol;
+	}
+	
+	public List<Alquiler> getListaAlquiler() {
+		return listaAlquiler;
+	}
+
+	public void setListaAlquiler(List<Alquiler> listaAlquiler) {
+		this.listaAlquiler = listaAlquiler;
 	}
 
 	// constructors
