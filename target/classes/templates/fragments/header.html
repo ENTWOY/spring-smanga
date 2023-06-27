@@ -64,7 +64,7 @@
                 </div> 
             </div>  
             <!-- Profile Name -->
-            <a class="text-decoration-none text-light name-admin">Bienvenido: Willian Rosales</a>
+            <a class="text-decoration-none text-light name-admin">Bienvenido: <span th:text="${username}"></span></a>
 
             <div class="ms-4">
                 <!-- Button OffCanvas Car -->
@@ -319,7 +319,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
-                    <a href="#_" class="btn btn-outline-danger">Sí, Cerrar Sesión</a>
+                    <a th:href="@{/logout}"class="btn btn-outline-danger">Sí, Cerrar Sesión</a>
                 </div>
             </div>
         </div>
@@ -354,107 +354,19 @@
                 <div class="container py-2">
                     <div class="row">
                         <!-- box-1 -->
-                        <div class="col-lg-4">
-                            <div class="card mb-4">
+                        <div class="col-lg-12">
+                            <div class="card mb-4 px-5">
                                 <div class="card-body text-center">
                                     <img src="/resources/img/avatar.jpg" alt="avatar" class="img-fluid rounded-circle border border-dark" style="width: 150px;">
-                                    <h5 class="my-3 text-dark fw-bold">John Smith</h5>
+                                    <h5 class="my-3 text-dark fw-bold" th:text="${username}"></h5>
                                     <p class="text-muted mb-1">Administrador</p>
-                                    <p class="text-muted mb-4">05-14-2000</p>
-                                    
+                                    <p class="text-muted mb-4"></p>                            
                                     <div class="d-flex justify-content-center mb-2">
-                                        <a href="#_" class="btn btn-sm btn-dark col-sm-10">Editar</a>
+                                        <a href="#_" data-bs-dismiss="modal" class="btn btn-sm btn-dark col-sm-12">Volver</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- box-2 -->
-                        <div class="col-lg-8">
-                            <div class="card mb-4">
-		                        <!-- details -->
-                                <div class="card-body">                	
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-dark font-monospace">Nombre:</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="text-muted mb-0">Rodrigo Willian</p>
-                                        </div>
-                                    </div>
-                                    <br>
-            
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-dark font-monospace">Apellido:</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="text-muted mb-0">Solar Torres</p>
-                                        </div>
-                                    </div>
-                                    <br>
-            
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-dark font-monospace">Email:</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="text-muted mb-0">cr7@example.com</p>
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-dark font-monospace">Celular:</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="text-muted mb-0">923943999</p>
-                                        </div>
-                                    </div>
-                                    <br>
-            
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-dark font-monospace">Usuario:</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="text-muted mb-0">I2023023</p>
-                                        </div>
-                                    </div>
-                                    <br>
-            
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-dark font-monospace">Clave:</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="text-muted mb-0">Querty</p>
-                                        </div>
-                                    </div>
-                                    <br>
-            
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-dark font-monospace">Dirección:</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-                                        </div>
-                                    </div>
-                                    <br>
-            
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-dark font-monospace">Fec. Nac:</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="text-muted mb-0">06-23-2000</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div>                     
                     </div>
                 </div>
             </div>

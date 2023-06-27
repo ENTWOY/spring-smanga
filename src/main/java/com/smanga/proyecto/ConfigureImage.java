@@ -13,7 +13,12 @@ public class ConfigureImage implements WebMvcConfigurer{
 		
 		// llamar al objecto ResourceHandlerRegistry
 		// con el 1.alias ingresamos a la 2.ruta fisica
-		registry.addResourceHandler("/datosImg/**").addResourceLocations("file:/C:/Users/Usuario/Desktop/soImportant/datosImg/");
+		// EXTERNO
+		// registry.addResourceHandler("/datosImg/**").addResourceLocations("file:/C:/Users/Usuario/Desktop/soImportant/datosImg/");
+		
+		// INTERNO
+		registry.addResourceHandler("/datosImg/**").addResourceLocations("classpath:/static/files/");
+		// String ruta=".//src//main//resources//static//files//";
 	}
 
 }

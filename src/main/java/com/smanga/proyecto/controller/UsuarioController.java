@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +36,13 @@ public class UsuarioController {
 	public String login() {
 		return "login";
 	}
+	
+	@RequestMapping("/logout")
+    public String logout() {
+        SecurityContextHolder.clearContext();
+        return "redirect:/login";
+    }
+	
 	// LISTADO
 	@RequestMapping("/usuario/lista")
 	public String inicio(Model model) {

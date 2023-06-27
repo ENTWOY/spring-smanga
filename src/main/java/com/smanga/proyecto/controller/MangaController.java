@@ -166,10 +166,10 @@ public class MangaController {
 		byte[] bytes = archivo.getBytes();
 		
 		// ruta del proyecto(interno) necesario: refresh
-		// String ruta=".//src//main//resources//static//files//";
+		String ruta=".//src//main//resources//static//files//";
 		
 		// ruta de escritorio(externo) automatico
-		String ruta="C://Users//Usuario//Desktop//soImportant//datosImg//";
+		// String ruta="C://Users//Usuario//Desktop//soImportant//datosImg//";
 		
 		// generar archivo
 		Files.write(Paths.get(ruta + nomArchivoString), bytes);
