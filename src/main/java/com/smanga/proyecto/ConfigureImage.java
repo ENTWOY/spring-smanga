@@ -17,8 +17,11 @@ public class ConfigureImage implements WebMvcConfigurer{
 		// registry.addResourceHandler("/datosImg/**").addResourceLocations("file:/C:/Users/Usuario/Desktop/soImportant/datosImg/");
 		
 		// INTERNO
-		registry.addResourceHandler("/datosImg/**").addResourceLocations("classpath:/static/files/");
+		// registry.addResourceHandler("/datosImg/**").addResourceLocations("classpath:/static/files/");
 		// String ruta=".//src//main//resources//static//files//";
+		
+		// USB(LECTURA)
+		registry.addResourceHandler("/datosImg/**").addResourceLocations("file:/D:/saveIMG/");
 	}
 
 }
