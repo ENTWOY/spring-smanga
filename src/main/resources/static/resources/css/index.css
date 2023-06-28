@@ -793,3 +793,12 @@
     }
 }
 /* end responsive */
+
+/*start nosotros*/
+.container-nosotros{
+	width: 40%;
+}
+.img-nosotros{
+	max-width: 90%;
+	height: 28pc;
+}
