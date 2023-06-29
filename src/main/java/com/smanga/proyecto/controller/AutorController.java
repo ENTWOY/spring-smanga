@@ -1,10 +1,13 @@
 package com.smanga.proyecto.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,6 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.smanga.proyecto.entity.Autor;
 import com.smanga.proyecto.service.AutorService;
+
+import net.sf.jasperreports.engine.JRException;
 
 @Controller
 @RequestMapping("/autor")
@@ -103,5 +108,42 @@ public class AutorController {
 		}
 		
 		return "redirect:/autor/lista";
+	}
+	
+	// REPORTE DE AUTORES
+	@RequestMapping("/reporte/{format}")
+	public String generarReporte(@PathVariable String format, RedirectAttributes redirect) throws JRException, IOException {
+		try {
+			serviAutor.exportarAutores(format);
+			redirect.addFlashAttribute("mensaje", "Reporte creado exitosamente");
+			if(format.equals("pdf"))
+				abrirArchivoPdf();
+			if(format.equals("html"))
+				abrirArchivoHtml();
+		} catch (Exception e) {
+			redirect.addFlashAttribute("mensaje", "Cierra tu pdf actual para poder actualizar el reporte");
+		}
+		
+		return "redirect:/autor/lista";
+	}
+	// ESTOS METODOS SIRVEN PARA QUE AL MOMENTO DE CREAR TAMBIEN SE ABRA DE MANERA AUTOMATICA
+	private void abrirArchivoHtml() {
+		try{
+			File path = new File("");
+			String directoryName = path.getAbsoluteFile().toString();
+			Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler  "+ directoryName+"/reportes"+"/Autores.html");
+			}catch(IOException e1){
+			System.out.print(e1.toString());
+			}	
+	}
+
+	private void abrirArchivoPdf() {
+		try {
+			File path = new File("");
+			String directoryName = path.getAbsoluteFile().toString();
+		    Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + directoryName+"/reportes"+"/Autores.pdf");
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
 	}
 }

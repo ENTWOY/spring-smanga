@@ -169,7 +169,10 @@ public class MangaController {
 		// String ruta=".//src//main//resources//static//files//";
 		
 		// ruta de escritorio(externo) automatico
-		String ruta="C://Users//Usuario//Desktop//soImportant//datosImg//";
+		// String ruta="C://Users//Usuario//Desktop//soImportant//datosImg//";
+		
+		// ruta de USB(externo)
+		String ruta = "D://saveIMG//";
 		
 		// generar archivo
 		Files.write(Paths.get(ruta + nomArchivoString), bytes);

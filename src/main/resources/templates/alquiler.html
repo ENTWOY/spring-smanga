@@ -39,7 +39,7 @@
 				<div class="row">
 					<div class="col-md-2">
 						<div class="form-group mb-2">
-							<label for=""><b>Id Admin</b></label> 
+							<label for=""><b>Id Empleado</b></label> 
 							<input type="text" class="form-control i-disabled-bg" id="id-codigoAdmin" name="codigoAdmin" readonly>
 						</div>
 						<div class="form-group">
@@ -49,7 +49,7 @@
 					</div>
 					<div class="col-md-3">
 						<div class="form-group mb-2">
-							<label><b>Nombre Administrador/a</b></label> 
+							<label><b>Nombre Empleado/a</b></label> 
 							<input type="text" class="form-control" id="id-admin" disabled="disabled">
 						</div>
 						<div class="form-group">
@@ -62,7 +62,7 @@
 						<div class="form-group mb-2">
 							<label><b></b></label>
 							<button type="button" class="form-control btn btn-outline-dark fw-bold" data-bs-toggle="modal" data-bs-target="#buscarAdministrador">
-								<i class="bi bi-person-fill"></i> Seleccionar Administrador
+								<i class="bi bi-person-fill"></i> Seleccionar Empleado
 							</button>
 						</div>
 						<div class="form-group">
@@ -101,9 +101,9 @@
 					<div class="col-md-6">
 						<hr>
 						<h6>Seleccione la cantidad deseada</h6>
-						<div class="input-group w-50">
+						<div class="input-group w-25">
 						  <button class="btn btn-dark fw-bold" type="button" id="btnMinus">-</button>
-						  <input type="text" class="form-control border-secondary" id="idCantidad" name="cantidad" placeholder="Ingresar Cantidad" value="1" min="1" readonly>
+						  <input type="text" class="form-control border-secondary text-center" id="idCantidad" name="cantidad" placeholder="Ingresar Cantidad" value="1" min="1" readonly>
 						  <button class="btn btn-dark fw-bold" type="button" id="btnPlus">+</button>
 						</div>			   				    
 						
@@ -222,19 +222,19 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header bg-blue-darker">
-					<h4 class="modal-title text-dark"><i class="bi bi-send-fill"></i> Seleccionar Administrador</h4>
+					<h4 class="modal-title text-dark"><i class="bi bi-send-fill"></i> Seleccionar Empleado</h4>
 					<button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<div class="row">
 						<div class="form-group has-feedback col-md-6">
 							<label for="exampleInputEmail1" class="text-center"><b>Apellidos</b></label>
-							<input type="text" class="form-control border-secondary" id="id-apellidoAdmin" name="idBuscar" placeholder="Ingrese el Apellido del Administrador">
+							<input type="text" class="form-control border-secondary" id="id-apellidoAdmin" name="idBuscar" placeholder="Ingrese el Apellido del Empleado">
 						</div>
 						<div class="form-group has-feedback col-md-6">
 							<label for="exampleInputEmail1" class="text-center"><b></b></label>
 							<button type="button" class="form-control fw-bold btn btn-primary" id="btn-buscarAdmin">
-								<i class="bi bi-search"></i> Buscar Administrador
+								<i class="bi bi-search"></i> Buscar Empleado
 							</button>
 						</div>
 						<div class="form-group has-feedback col-md-12">
