@@ -6,6 +6,12 @@
   <p>S-Manga es una aplicación web desarrollada en Spring y utiliza MySQL como base de datos. Permite a los usuarios alquilar y disfrutar de una amplia variedad de mangas japoneses.</p>
 </div>
 
+Acceso inicial:
+| Usuario | Contraseña |
+|---------|------------|
+| admin   | 123        |
+| neko    | 123        |
+
 ## Screenshots
 
 ![image](https://github.com/NeiDenn/spring-smanga/assets/85379478/b2b5aae7-f8fc-4ffd-956e-2b40cf294301)
