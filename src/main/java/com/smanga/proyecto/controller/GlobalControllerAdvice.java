@@ -14,5 +14,6 @@ public class GlobalControllerAdvice {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         model.addAttribute("username", username.toUpperCase());
+        System.out.println("Mi rol es: " + username);
     }
 }

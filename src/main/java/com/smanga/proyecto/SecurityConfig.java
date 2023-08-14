@@ -21,21 +21,19 @@ public class SecurityConfig {
 
 		http
         .authorizeHttpRequests()
-        	// Para permitir nuestro js y css (en nuestra carpeta static)
-			.requestMatchers("/*.js", "/*.css").permitAll()
-            .requestMatchers("/resources/**").permitAll()
-            .anyRequest().authenticated()
-            .and()
+	        .requestMatchers("/index", "/contacto", "/nosotros", "/login", "/logout", "/manga/detalle/**", "/registro").permitAll()
+	        .requestMatchers("").hasRole("NEKO")
+	        .requestMatchers("/resources/**").permitAll()
+	        .requestMatchers("/**").hasRole("ADMIN")
+	        .anyRequest().authenticated()
+	        .and()
         .formLogin()
-        	// login permit
             .loginPage("/login")
-            // success send
-            .permitAll().defaultSuccessUrl("/index")
+            .defaultSuccessUrl("/index")
             .and()
         .logout()
             .logoutUrl("/logout")
             .permitAll();
-		
 		return http.build();
 	}
 
@@ -44,11 +42,11 @@ public class SecurityConfig {
 		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
 		manager.createUser(User.withUsername("admin")
 					.password(passwordEncoder().encode("123"))
-					.roles()
+					.roles("ADMIN")
 					.build());
 		manager.createUser(User.withUsername("neko")
 				.password(passwordEncoder().encode("123"))
-				.roles()
+				.roles("NEKO")
 				.build());
 		return manager;
 	}
