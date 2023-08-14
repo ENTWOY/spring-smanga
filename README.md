@@ -12,6 +12,12 @@ Acceso inicial:
 | admin   | 123        |
 | neko    | 123        |
 
+## Niveles de Acceso
+
+- **Admin**: El usuario "admin" tiene acceso total a todas las funcionalidades de la aplicación. Puede ver, crear, editar y eliminar datos en todas las páginas y secciones.
+
+- **Neko**: El usuario "neko" tiene un acceso más limitado. Tiene acceso únicamente a ciertas páginas y funcionalidades específicas de la aplicación. Su capacidad de navegación puede estar restringida en algunas áreas.
+
 ## Screenshots
 
 ![image](https://github.com/NeiDenn/spring-smanga/assets/85379478/b2b5aae7-f8fc-4ffd-956e-2b40cf294301)
