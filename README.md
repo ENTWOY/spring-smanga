@@ -32,7 +32,7 @@ Niveles de Acceso:
 ## Instalación y ejecución
 1. Clonar el repositorio `https://github.com/NeiDenn/spring-smanga.git`
 2. Importar el proyecto en el IDE Spring Tool Suite
-3. Ajustar en el archivo 'application.properties' la cadena de conexión 'BD_SMANGA' a la Base de datos
+3. Ajustar en el archivo `application.properties` la cadena de conexión `BD_SMANGA` a la Base de datos que se encuentra en la carpeta `database`
 ```
 server.port=8091
 spring.jpa.database=MYSQL
