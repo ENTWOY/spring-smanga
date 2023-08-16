@@ -6,17 +6,34 @@
   <p>S-Manga es una aplicación web desarrollada en Spring y utiliza MySQL como base de datos. Permite a los usuarios alquilar y disfrutar de una amplia variedad de mangas japoneses.</p>
 </div>
 
-Acceso inicial:
+## Acceso inicial:
+
 | Usuario | Contraseña |
 |---------|------------|
 | admin   | 123        |
 | neko    | 123        |
 
-## Niveles de Acceso
+Niveles de Acceso:
 
 - **Admin**: El usuario "admin" tiene acceso total a todas las funcionalidades de la aplicación. Puede ver, crear, editar y eliminar datos en todas las páginas y secciones.
 
 - **Neko**: El usuario "neko" tiene un acceso más limitado. Tiene acceso únicamente a ciertas páginas y funcionalidades específicas de la aplicación. Su capacidad de navegación puede estar restringida en algunas áreas.
+
+## Herramientas
+- Spring Tool Suite 4
+- MySQL Workbench 8.0 o superior
+
+## Tecnologías
+- HTML, CSS, JS, JQUERY, JAVA, MVC
+- Bootstrap5
+- Alertyfy
+- Datatables
+
+## Instalación y ejecución
+1. Clonar el repositorio `https://github.com/NeiDenn/spring-smanga.git`
+2. Importar el proyecto en Spring Tool Suite
+3. Ajustar en el archivo application.properties la cadena de conexión BD_SMANGA a la Base de datos
+4. Ejecutar
 
 ## Screenshots
 
