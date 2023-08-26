@@ -17,7 +17,7 @@ Niveles de Acceso:
 
 - **Admin**: El usuario "admin" tiene acceso total a todas las funcionalidades de la aplicación. Puede ver, crear, editar y eliminar datos en todas las páginas y secciones.
 
-- **Neko**: El usuario "neko" tiene un acceso más limitado. Tiene acceso únicamente a ciertas páginas y funcionalidades específicas de la aplicación. Su capacidad de navegación puede estar restringida en algunas áreas.
+- **Neko**: El usuario "neko" tiene acceso únicamente a ciertas páginas y funcionalidades específicas de la aplicación. Su capacidad de navegación puede estar restringida en algunas áreas.
 
 ## Herramientas
 - Spring Tool Suite 4
@@ -26,13 +26,17 @@ Niveles de Acceso:
 ## Tecnologías
 - HTML, CSS, JS, JQUERY, JAVA, MVC
 - Bootstrap5
-- Alertyfy
+- Alertify
 - Datatables
+- Thymeleaf
+- JPA
+- MySql
+- Java 17
 
 ## Instalación y ejecución
 1. Clonar el repositorio `https://github.com/NeiDenn/spring-smanga.git`
-2. Importar el proyecto en el IDE Spring Tool Suite
-3. Ajustar en el archivo `application.properties` la cadena de conexión `BD_SMANGA` a la Base de datos que se encuentra en la carpeta `database`
+2. Importar el proyecto en el IDE Spring Tool Suite 4 
+3. Ajustar en el archivo `application.properties` la cadena de conexión `BD_SMANGA` a la base de datos que se encuentra en la carpeta `database`
 ```
 server.port=8091
 spring.jpa.database=MYSQL
